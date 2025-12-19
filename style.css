@@ -1,0 +1,124 @@
+/*
+ Almario, Via Ysabelle B.        
+ BSIT-3A		Dec. 19, 2025
+*/
+
+:root{ 
+    --bg: #e6f7fe; 
+    --primary: #233b4d; 
+    --secondary: #428895;
+    --accent: #7dbab9; 
+}
+
+body{ 
+    font-family: 'Segoe UI',sans-serif; 
+    margin: 0; 
+    background: var(--bg); 
+    overflow: hidden; 
+}
+
+.container{ 
+    display: flex; 
+    height: 100vh; 
+}
+
+.sidebar{ 
+    width: 260px; 
+    background: var(--primary); 
+    color: white; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.sidebar h2 span{ 
+    color: var(--accent); 
+}
+
+.filter-group input, button{ 
+    width: 100%; 
+    margin: 8px 0; 
+    padding: 10px; 
+    border-radius: 6px; 
+    border: none; 
+    box-sizing: border-box; 
+}
+
+button{ 
+    background: var(--accent); 
+    color: white; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+.sidebar-footer{ 
+    font-size: 0.75rem; 
+    border-top: 1px solid #2d3748; 
+    padding-top: 15px; 
+}
+
+.sidebar-footer a{ 
+    color: var(--accent); 
+    text-decoration: none; 
+}
+
+.dashboard{ 
+    flex: 1; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+/*--WEBSITE HEADINGS/TEXT--*/
+header h1{ 
+    margin: 0; 
+    font-size: 1.4rem; 
+}
+
+header p{ 
+    margin: 5px 0 15px 0; 
+    color: var(--secondary); 
+}
+
+h3{ /*Total Recovered*/
+    margin: 0 0 10px 0; 
+    color: #8db4c1; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+}
+
+/*--GRID LAYOUT--*/
+.grid-container{ 
+    display: grid; 
+    grid-template-columns: 1.6fr 1fr; 
+    gap: 15px; 
+    flex: 1;
+    min-height: 0; 
+}
+
+.chart-right-stack{ 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.card{ 
+    background: white; 
+    padding: 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    display: flex; 
+    flex-direction: column;
+}
+
+.canvas-container{ 
+    position: relative; 
+    flex: 1; width: 100%; 
+    min-height: 0; 
+}
+
+.canvas-container.small{ 
+    height: 180px;
+}

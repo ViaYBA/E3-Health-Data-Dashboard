@@ -1,0 +1,78 @@
+<!-- 
+ Almario, Via Ysabelle B.        
+ BSIT-3A		Dec. 19, 2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PH COVID-19 Recovery Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+<!--Sidebar-->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <h2>C-19Data<span>PH</span></h2>
+                <div class="filter-group">
+                    <label>Date Range Filter</label>
+                    <input type="date" id="start-date">
+                    <input type="date" id="end-date">
+                    <button id="apply-filter">Update Dashboard</button>
+                </div>
+                <div class="kpi">
+                    <p>Total Recovered</p>
+                    <h3 id="stat-recovered">0</h3>
+                </div>
+                <div class="kpi">
+                    <p>Recovery Status</p>
+                    <h3 id="cluster-status">Analyzing...</h3>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>Dataset Source[s]: <br>
+                    <a href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases" target="_blank">HDX Novel COVID-19 Cases Data - JHU</a><br>
+                    <a href="https://data.humdata.org/dataset/covid-19-vaccinations" target="_blank">HDX COVID-19 Vaccinations</a>
+                </p>
+            </div>
+        </nav>
+<!--Main Content: Charts Dashboard-->
+        <main class="dashboard">
+            <header>
+                <h1>Post-Pandemic Recovery Analysis</h1>
+                <p>Analyzing Vaccination Rates vs. Current Infection Clusters</p>
+            </header>
+
+            <div class="grid-container">
+                <div class="card chart-left">
+                    <h3>1. Infection Trend vs. Vaccination shield</h3>
+                    <div class="canvas-container">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-right-stack">
+                    <div class="card">
+                        <h3>2. Daily Mortality Trend</h3>
+                        <div class="canvas-container small">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>3. Immunity Distribution (Estimated)</h3>
+                        <div class="canvas-container small">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
